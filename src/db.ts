@@ -8,6 +8,6 @@ export default async function connectDB() {
     console.log(URI)
     
     await mongoose.connect(URI, {
-        dbName: "IMS"
+        dbName: "trullo"
     })
 } 

@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, InferSchemaType} from "mongoose";
 
 
 
@@ -13,4 +13,5 @@ const TaskSchema = new Schema({
 })
 
 export const Task = mongoose.model("Task", TaskSchema);
+export type TaskModel = InferSchemaType<typeof TaskSchema>
 
