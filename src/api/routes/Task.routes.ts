@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { taskController } from "../controllers/Task.controllers";
+import { idCheck } from "../../middleware/idCheck";
 
 const router = Router();
 
-router.get("/:id", taskController.getUser)
-router.post("/:id", taskController.createUser)
-router.put("/:id", taskController.updateUser)
-router.delete("/:id", taskController.deleteUser)
+router.get("/:id", idCheck, taskController.getTask)
+router.post("/", taskController.createTask)
+router.put("/:id", idCheck, taskController.updateTask)
+router.delete("/:id", idCheck, taskController.deleteTask)
 
 
 

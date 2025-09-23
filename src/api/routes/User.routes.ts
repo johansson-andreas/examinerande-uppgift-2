@@ -1,12 +1,13 @@
 import { Router } from "express";
 import { userController } from "../controllers/User.controllers";
+import { idCheck } from "../../middleware/idCheck";
 
 const router = Router();
 
-router.get("/:id", userController.getUser)
+router.get("/:id", idCheck, userController.getUser)
 router.post("/", userController.createUser)
-router.put("/:id", userController.updateUser)
-router.delete("/:id", userController.deleteUser)
+router.put("/:id", idCheck, userController.updateUser)
+router.delete("/:id", idCheck, userController.deleteUser)
 
 
 

@@ -10,5 +10,6 @@ const UserSchema = new Schema({
 
 export const User = mongoose.model("User", UserSchema);
 export type UserModel = InferSchemaType<typeof UserSchema>
+export type PartialUserModel = Partial<UserModel>
 
 
