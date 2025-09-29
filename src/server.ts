@@ -4,7 +4,7 @@ import connectDB from "./db";
 import router from "./api/index"
 
 dotenv.config();
-const port = 3001;
+const port = 3000;
 const app = express();
 app.use(express.json());
 

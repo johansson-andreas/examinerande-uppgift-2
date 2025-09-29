@@ -12,7 +12,7 @@ export const authCheck = (req: Request, res: Response, next: NextFunction) => {
       token,
       process.env.JWT_SECRET_KEY!
     ) as DecodedToken;
-    console.log(decoded)
+    
     req.user = { id: decoded.userId, role: decoded.role };
     if (decoded.userId === id || decoded.role === ROLES.ADMIN) {
       return next();
