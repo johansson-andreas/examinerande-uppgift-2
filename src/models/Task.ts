@@ -8,8 +8,7 @@ const TaskSchema = new Schema({
     status: {type: String, enum: ['to-do', 'in progress', "blocked", "done"]},
     assignedTo: {type:mongoose.Types.ObjectId}, 
     createdAt: {type: Date, required: true},
-    finishedAt: {type: Date}
-
+    finishedAt: {type: Date},
 })
 
 export const Task = mongoose.model("Task", TaskSchema);

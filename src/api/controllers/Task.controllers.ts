@@ -67,7 +67,9 @@ class TaskController {
           return res.status(404).json({ message: "Assigned user not found" });
       }
 
-      if (status === "done") parsed.finishedAt = new Date();
+      if (status === "done") {
+        parsed.finishedAt = new Date();
+      }
       const response = await Task.findByIdAndUpdate(id, parsed, {
         new: true,
       });
